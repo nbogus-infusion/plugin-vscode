@@ -1,0 +1,45 @@
+{
+    "name": "component-shortcut",
+    "displayName": "component-shortcut",
+    "description": "",
+    "version": "0.0.1",
+    "publisher": "foo",
+    "engines": {
+        "vscode": "^1.5.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:dev.component.less",
+        "onCommand:dev.component.html",
+        "onCommand:dev.component.ts"
+    ],
+    "main": "./out/src/extension",
+    "contributes": {
+        "commands": [{
+            "command": "dev.component.less",
+            "title": "Go to LESS"
+        },
+        {
+            "command": "dev.component.html",
+            "title": "Go to HTML"
+        },
+        {
+            "command": "dev.component.ts",
+            "title": "Go to TS"
+        }]
+    },
+    "scripts": {
+        "vscode:prepublish": "tsc -p ./",
+        "compile": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install"
+    },
+    "devDependencies": {
+        "typescript": "^2.0.3",
+        "vscode": "^1.0.0",
+        "mocha": "^2.3.3",
+        "@types/node": "^6.0.40",
+        "@types/mocha": "^2.2.32"
+    }
+}
